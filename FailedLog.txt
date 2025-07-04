@@ -1,0 +1,243 @@
+Failed Transaction Log:
+
+2025-07-04 15:07:17,215 4 INFO kani-pruebas-sub-19634524 odoo.addons.payment.models.payment_transaction: generic and provider-specific processing values for transaction with reference S74767:
+{'amount': 1.3,
+ 'currency_id': 163,
+ 'partner_id': 7,
+ 'provider_code': 'cybersource',
+ 'provider_id': 21,
+ 'reference': 'S74767'}
+2025-07-04 15:07:17,218 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:17] "POST /my/orders/74769/transaction?access_token=ff1a6fd0-679f-436c-95fc-4248044a1245 HTTP/1.0" 200 - 45 0.067 13.405
+2025-07-04 15:07:17,320 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:17] "POST /payment/cybersource/get_merchant_id HTTP/1.0" 200 - 3 0.001 0.004
+2025-07-04 15:07:17,424 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: Using device fingerprint: 2507047476
+2025-07-04 15:07:17,424 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: Using session ID for device fingerprint: visanetgt_kani2507047476
+2025-07-04 15:07:17,424 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: Payment post data: {"reference": "S74767", "customer_input": {"exp_year": "2029", "exp_month": "09", "name": "Luis Lira", "card_num": "XXXX1111", "cvv": "XXX", "device_fingerprint": "2507047476"}, "values": {"amount": 1.3, "currency": 163, "partner": 7, "order": "S74767", "sale_order_id": "74769", "merchant_id": "visanetgt_kani"}}
+2025-07-04 15:07:17,424 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: CyberSource request data: {"_client_reference_information": {"_code": "S74767"}, "_processing_information": {"_capture": true}, "_payment_information": {"_tokenized_card": {"_number": "4111 1111 1111 1111", "_expiration_month": "09", "_expiration_year": "2029", "_transaction_type": "1", "_security_code": "123"}}, "_order_information": {"_amount_details": {"_total_amount": 1.3, "_currency": "GTQ"}, "_bill_to": {"_first_name": "Raul", "_last_name": "Colocho", "_address1": "Km. 28.5 carretera Interamericano, 6ta avenida, residenciales los cipreses 1-14 lote 1, San Lucas Sacatep\u00e9quez. Referencia, a la par de Caleb campamento cristiano.", "_locality": "Guatemala", "_administrative_area": "010001", "_postal_code": "502", "_country": "GT", "_email": "raul@kani.life", "_phone_number": "44351680"}}, "_device_information": {"_fingerprint_session_id": "2507047476"}}
+2025-07-04 15:07:17,424 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: Creating payment request
+2025-07-04 15:07:17,458 4 INFO kani-pruebas-sub-19634524 MerchantConfiguration: START> =======================================
+2025-07-04 15:07:17,460 4 INFO kani-pruebas-sub-19634524 MerchantConfiguration: Mconfig >      {'authentication_type': 'http_signature', 'run_environment': 'apitest.cybersource.com', 'request_json_path': '', 'key_file_name': 'testrest', 'keys_directory': '/home/odoo/resources', 'use_metakey': 'False', 'portfolio_id': '', 'timeout': '1000', 'log_config': '<CyberSource.logging.log_configuration.LogConfiguration object at 0x7e38ee128070>'}
+2025-07-04 15:07:17,460 4 INFO kani-pruebas-sub-19634524 PaymentsApi: CALL TO METHOD `create_payment` STARTED
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: Using Request Target:   /pts/v2/payments
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: Authentication Type:   http_signature
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: Request-Type:      POST
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: Content-Type:   application/json
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: v-c-merchant-id:   visanetgt_kani
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: Date:   Fri, 04 Jul 2025 15:07:17 GMT
+2025-07-04 15:07:17,461 4 INFO kani-pruebas-sub-19634524 Authorization: Host:   apitest.cybersource.com 
+2025-07-04 15:07:18,517 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: CyberSource response - Status: 201, Body: {"_links":{"void":{"method":"POST","href":"/pts/v2/payments/7516416376226143303812/voids"},"self":{"method":"GET","href":"/pts/v2/payments/7516416376226143303812"}},"clientReferenceInformation":{"code":"S74767","partner":{"developerId":"J0TV2I9S"}},"consumerAuthenticationInformation":{"token":"Axj//wSTl3c7Rn84IHiEAHUs3asWzRi2Zt2zJk2YtGbNgzcMWSe/MyxbmgKe/MyxbmqAIglEGGTSTL0YxVXrQwJycu7naM/nBA8QgAAA2grW"},"id":"7516416376226143303812","orderInformation":{"amountDetails":{"totalAmount":"1.30","authorizedAmount":"1.30","currency":"GTQ"}},"paymentAccountInformation":{"card":{"type":"001"}},"paymentInformation":{"tokenizedCard":{"type":"001"},"scheme":"VISA DEBIT","bin":"411111","accountType":"Visa Classic","issuer":"CONOTOXIA SP. Z O.O","card":{"type":"001"},"binCountry":"PL"},"processorInformation":{"systemTraceAuditNumber":"441784","merchantNumber":"019321002","approvalCode":"831000","cardVerification":{"resultCodeRaw":"M","resultCode":"M"},"merchantAdvice":{"code":"01","codeRaw":"M001"},"responseDetails":"ABC","networkTransactionId":"016153570198200","retrievalReferenceNumber":"518515441784","consumerAuthenticationResponse":{"code":"2","codeRaw":"2"},"transactionId":"016153570198200","responseCode":"00","avs":{"code":"Y","codeRaw":"Y"}},"reconciliationId":"7516416376226143303812","riskInformation":{"localTime":"9:07:17","score":{"result":"36","factorCodes":["B","F"],"modelUsed":"default_lac"},"infoCodes":{"address":["MM-BIN","UNV-ADDR"],"customerList":["NEG-ASUSP","NEG-BA","NEG-EM","NEG-SA"],"suspicious":["RISK-TB"],"identityChange":["ID-M-POS","MORPH-B","MORPH-E","MORPH-P","MORPH-S"]},"profile":{"earlyDecision":"ACCEPT"},"providers":{"fingerprint":{"profile_duration":"6","test_risk_rating":"neutral"}},"casePriority":"3"},"status":"AUTHORIZED","submitTimeUtc":"2025-07-04T15:07:18Z"}
+2025-07-04 15:07:18,517 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: Extracted approval code from CyberSource response: 831000
+2025-07-04 15:07:18,517 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.controllers.advanced_payment_cybersource: Payment successfully AUTHORIZED
+2025-07-04 15:07:18,521 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.model.payment_transaction: Set provider_reference to approval code: 831000 for transaction S74767
+2025-07-04 15:07:18,521 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.model.payment_transaction: Stored device fingerprint: 2507047476
+2025-07-04 15:07:18,521 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.model.payment_transaction: Stored approval code: 831000
+2025-07-04 15:07:18,521 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.model.payment_transaction: Processing CyberSource transaction S74767 with state: done, status: AUTHORIZED, approval_code: 831000
+2025-07-04 15:07:18,522 4 INFO kani-pruebas-sub-19634524 odoo.addons.advanced_payment_cybersource.model.payment_transaction: Setting transaction S74767 to done
+2025-07-04 15:07:18,561 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:18] "POST /payment/cybersource/simulate_payment HTTP/1.0" 200 - 30 0.026 1.120
+2025-07-04 15:07:18,680 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:18] "GET /payment/status HTTP/1.0" 303 - 7 0.003 0.006
+2025-07-04 15:07:18,955 4 WARNING kani-pruebas-sub-19634524 odoo.modules.module: Missing `license` key in manifest for 'kani_auto_mrp_split', defaulting to LGPL-3
+2025-07-04 15:07:18,998 4 WARNING kani-pruebas-sub-19634524 odoo.modules.module: Missing `license` key in manifest for 'kani_auto_journal', defaulting to LGPL-3
+2025-07-04 15:07:19,020 4 WARNING kani-pruebas-sub-19634524 odoo.modules.module: Missing `license` key in manifest for 'kani_delivery_schedule', defaulting to LGPL-3 
+2025-07-04 15:07:19,379 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:19] "GET /en/payment/status HTTP/1.0" 200 - 182 0.082 0.521
+2025-07-04 15:07:19,792 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:19] "GET /website/translations/0a601a06ede8c0016c876a11b7cefdd0d4de1770?lang=en_US HTTP/1.0" 303 - 1 0.000 0.003
+2025-07-04 15:07:21,251 4 INFO kani-pruebas-sub-19634524 werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/assets/6a90c27/web.report_assets_pdf.min.css HTTP/1.0" 200 - 3 0.007 0.032
+2025-07-04 15:07:21,252 4 INFO kani-pruebas-sub-19634524 werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/assets/2958244/web.report_assets_common.min.css HTTP/1.0" 200 - 3 0.006 0.023
+2025-07-04 15:07:21,293 4 INFO kani-pruebas-sub-19634524 werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /?debug=0 HTTP/1.0" 303 - 1 0.000 0.003
+2025-07-04 15:07:21,307 4 INFO kani-pruebas-sub-19634524 werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /en/?debug=0 HTTP/1.0" 301 - 2 0.001 0.003
+2025-07-04 15:07:21,334 4 INFO kani-pruebas-sub-19634524 odoo.addons.website_crm_iap_reveal.models.ir_http: Reveal process time: [0.002094268798828125], match rule: [False?], country code: [US], ip: [34.172.9.150]
+2025-07-04 15:07:21,355 4 INFO ? werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/static/fonts/lato/Lato-Reg-webfont.woff HTTP/1.0" 200 - 0 0.000 0.002
+2025-07-04 15:07:21,362 4 INFO ? werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/static/fonts/lato/Lato-Lig-webfont.woff HTTP/1.0" 200 - 0 0.000 0.001
+2025-07-04 15:07:21,393 4 INFO ? werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/static/fonts/lato/Lato-Bla-webfont.woff HTTP/1.0" 200 - 0 0.000 0.009
+2025-07-04 15:07:21,394 4 INFO ? werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/static/fonts/lato/Lato-Hai-webfont.woff HTTP/1.0" 200 - 0 0.000 0.004
+2025-07-04 15:07:21,400 4 INFO ? werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /web/static/fonts/lato/Lato-Bol-webfont.woff HTTP/1.0" 200 - 0 0.000 0.001
+2025-07-04 15:07:21,499 4 INFO kani-pruebas-sub-19634524 werkzeug: 34.172.9.150 - - [04/Jul/2025 15:07:21] "GET /en?debug=0 HTTP/1.0" 200 - 30 0.043 0.141
+2025-07-04 15:07:23,596 4 INFO kani-pruebas-sub-19634524 odoo.addons.base.models.ir_actions_report: The PDF report has been generated for model: sale.order, records [74769]. 
+2025-07-04 15:07:24,577 4 WARNING kani-pruebas-sub-19634524 py.warnings: /home/odoo/src/user/fel_ecofactura/models/account.py:239: DeprecationWarning: The 'warn' function is deprecated, use 'warning' instead
+  File "/usr/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/odoo/src/odoo/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 342, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python3.10/http/server.py", line 433, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 374, in handle_one_request
+    self.run_wsgi()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/odoo/src/odoo/odoo/http.py", line 2374, in __call__
+    response = request._serve_db()
+  File "/home/odoo/src/odoo/odoo/http.py", line 1949, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/home/odoo/src/odoo/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/home/odoo/src/odoo/odoo/http.py", line 1977, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/home/odoo/src/odoo/odoo/http.py", line 2181, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/home/odoo/src/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/home/odoo/src/odoo/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/home/odoo/src/odoo/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/home/odoo/src/odoo/addons/payment/controllers/post_processing.py", line 54, in poll_status
+    monitored_tx._finalize_post_processing()
+  File "/home/odoo/src/enterprise/sale_subscription/models/payment_transaction.py", line 151, in _finalize_post_processing
+    super(PaymentTransaction, process_tx)._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/website_payment/models/payment_transaction.py", line 14, in _finalize_post_processing
+    super()._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/account_payment/models/payment_transaction.py", line 240, in _finalize_post_processing
+    super()._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/payment/models/payment_transaction.py", line 1013, in _finalize_post_processing
+    self.filtered(lambda tx: tx.operation != 'validation')._reconcile_after_done()
+  File "/home/odoo/src/enterprise/sale_subscription/models/payment_transaction.py", line 90, in _reconcile_after_done
+    res = super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/pos_online_payment/models/payment_transaction.py", line 29, in _reconcile_after_done
+    super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/sale/models/payment_transaction.py", line 126, in _reconcile_after_done
+    super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/account_payment/models/payment_transaction.py", line 123, in _reconcile_after_done
+    self.invoice_ids.filtered(lambda inv: inv.state == 'draft').action_post()
+  File "/home/odoo/src/odoo/addons/sale/models/account_move.py", line 66, in action_post
+    res = super(AccountMove, self).action_post()
+  File "/home/odoo/src/enterprise/account_reports/models/account_move.py", line 61, in action_post
+    return super().action_post()
+  File "/home/odoo/src/enterprise/account_accountant/models/account_move.py", line 75, in action_post
+    res = super().action_post()
+  File "/home/odoo/src/odoo/addons/account/models/account_move.py", line 4158, in action_post
+    other_moves._post(soft=False)
+  File "/home/odoo/src/enterprise/sale_subscription/models/account_move.py", line 13, in _post
+    posted_moves = super()._post(soft=soft)
+  File "/home/odoo/src/user/fel_ecofactura/models/account.py", line 19, in _post
+    if self.certificar():
+  File "/home/odoo/src/user/fel_ecofactura/models/account.py", line 239, in certificar
+    logging.warn(xmls.decode('utf8'))
+2025-07-04 15:07:24,577 4 WARNING kani-pruebas-sub-19634524 root: <?xml version='1.0' encoding='UTF-8'?>
+<stdTWS xmlns="FEL"><TrnEstNum>1</TrnEstNum><TipTrnCod>FCAM</TipTrnCod><TrnNum>358721</TrnNum><TrnFec>2025-07-04</TrnFec><MonCod>GTQ</MonCod><TrnBenConNIT>CF</TrnBenConNIT><TrnBenConEspecial>1</TrnBenConEspecial><TrnExp>0</TrnExp><TrnExento>0</TrnExento><TrnFraseTipo>0</TrnFraseTipo><TrnEscCod>0</TrnEscCod><TrnEFACECliNom>Raul Colocho</TrnEFACECliNom><TrnEFACECliDir>Km. 28.5 carretera Interamericano, 6ta avenida, residenciales los cipreses 1-14 lote 1, San Lucas Sacatepéquez. Referencia, a la par de Cale</TrnEFACECliDir><TrnObs></TrnObs><TrnEmail>raul@kani.life</TrnEmail><TrnCampAd01></TrnCampAd01><TrnCampAd02></TrnCampAd02><TrnCampAd03></TrnCampAd03><TrnCampAd04></TrnCampAd04><TrnCampAd05></TrnCampAd05><TrnCampAd06></TrnCampAd06><TrnCampAd07/><TrnCampAd08/><TrnCampAd09/><TrnCampAd10/><TrnCampAd11/><TrnCampAd12/><TrnCampAd13>Raul Colocho</TrnCampAd13><TrnCampAd14>POR CHEQUÉ RECHAZADO SE COBRARÁ Q. 100.00 POR GASTOS ADMINISTRATIVOS</TrnCampAd14><TrnCampAd15/><TrnCampAd16/><TrnCampAd17/><TrnCampAd18/><TrnCampAd19/><TrnCampAd20/><TrnCampAd21/><TrnCampAd22/><TrnCampAd23/><TrnCampAd24/><TrnCampAd25/><TrnCampAd26/><TrnCampAd27/><TrnCampAd28/><TrnCampAd29/><TrnCampAd30/><stdTWSD><stdTWS.stdTWSCIt.stdTWSDIt><TrnLiNum>1</TrnLiNum><TrnArtCod>TP</TrnArtCod><TrnArtNom>[TP] Tortas Pollo Life Style
+Bolsa de 4.8 Lb, 16 porciones de 0.3 Lb c/u</TrnArtNom><TrnCan>1.000000</TrnCan><TrnVUn>129.950000</TrnVUn><TrnUniMed>Kg</TrnUniMed><TrnVDes>128.65</TrnVDes><TrnArtBienSer>B</TrnArtBienSer><TrnArtImpAdiCod>0</TrnArtImpAdiCod><TrnArtImpAdiUniGrav>0</TrnArtImpAdiUniGrav><TrnDetCampAdi01/><TrnDetCampAdi02/><TrnDetCampAdi03/><TrnDetCampAdi04/><TrnDetCampAdi05/></stdTWS.stdTWSCIt.stdTWSDIt></stdTWSD><stdTWSCam><stdTWS.stdTWSCam.stdTWSCamIt><TrnAbonoNum>1</TrnAbonoNum><TrnAbonoFecVen>2025-07-04</TrnAbonoFecVen><TrnAbonoMonto>1.3</TrnAbonoMonto></stdTWS.stdTWSCam.stdTWSCamIt></stdTWSCam></stdTWS>
+2025-07-04 15:07:24,871 4 WARNING kani-pruebas-sub-19634524 py.warnings: /home/odoo/src/user/fel_ecofactura/models/account.py:247: DeprecationWarning: The 'warn' function is deprecated, use 'warning' instead
+  File "/usr/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/odoo/src/odoo/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 342, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python3.10/http/server.py", line 433, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 374, in handle_one_request
+    self.run_wsgi()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 308, in execute
+    application_iter = app(environ, start_response)
+  File "/home/odoo/src/odoo/odoo/http.py", line 2374, in __call__
+    response = request._serve_db()
+  File "/home/odoo/src/odoo/odoo/http.py", line 1949, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/home/odoo/src/odoo/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/home/odoo/src/odoo/odoo/http.py", line 1977, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/home/odoo/src/odoo/odoo/http.py", line 2181, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/home/odoo/src/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/home/odoo/src/odoo/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/home/odoo/src/odoo/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/home/odoo/src/odoo/addons/payment/controllers/post_processing.py", line 54, in poll_status
+    monitored_tx._finalize_post_processing()
+  File "/home/odoo/src/enterprise/sale_subscription/models/payment_transaction.py", line 151, in _finalize_post_processing
+    super(PaymentTransaction, process_tx)._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/website_payment/models/payment_transaction.py", line 14, in _finalize_post_processing
+    super()._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/account_payment/models/payment_transaction.py", line 240, in _finalize_post_processing
+    super()._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/payment/models/payment_transaction.py", line 1013, in _finalize_post_processing
+    self.filtered(lambda tx: tx.operation != 'validation')._reconcile_after_done()
+  File "/home/odoo/src/enterprise/sale_subscription/models/payment_transaction.py", line 90, in _reconcile_after_done
+    res = super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/pos_online_payment/models/payment_transaction.py", line 29, in _reconcile_after_done
+    super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/sale/models/payment_transaction.py", line 126, in _reconcile_after_done
+    super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/account_payment/models/payment_transaction.py", line 123, in _reconcile_after_done
+    self.invoice_ids.filtered(lambda inv: inv.state == 'draft').action_post()
+  File "/home/odoo/src/odoo/addons/sale/models/account_move.py", line 66, in action_post
+    res = super(AccountMove, self).action_post()
+  File "/home/odoo/src/enterprise/account_reports/models/account_move.py", line 61, in action_post
+    return super().action_post()
+  File "/home/odoo/src/enterprise/account_accountant/models/account_move.py", line 75, in action_post
+    res = super().action_post()
+  File "/home/odoo/src/odoo/addons/account/models/account_move.py", line 4158, in action_post
+    other_moves._post(soft=False)
+  File "/home/odoo/src/enterprise/sale_subscription/models/account_move.py", line 13, in _post
+    posted_moves = super()._post(soft=soft)
+  File "/home/odoo/src/user/fel_ecofactura/models/account.py", line 19, in _post
+    if self.certificar():
+  File "/home/odoo/src/user/fel_ecofactura/models/account.py", line 247, in certificar
+    logging.warn(resultado)
+2025-07-04 15:07:24,872 4 WARNING kani-pruebas-sub-19634524 root: <?xml version="1.0" encoding="UTF-8"?><Errores><Error Codigo="1107">ERROR EN LA ESTRUCTURA DEL XML</Error><Error Codigo="1108">cvc-minLength-valid: Value 'Kg' with length = '2' is not facet-valid with respect to minLength '3' for type '#AnonType_TrnUniMedstdTWS.stdTWSCIt.stdTWSDItstdTWSDstdTWS'.</Error></Errores>
+2025-07-04 15:07:24,873 4 ERROR kani-pruebas-sub-19634524 odoo.addons.payment.controllers.post_processing: Encountered an error while post-processing transaction with id 506:
+No se publicó la factura por error del certificador FEL: <?xml version="1.0" encoding="UTF-8"?><Errores><Error Codigo="1107">ERROR EN LA ESTRUCTURA DEL XML</Error><Error Codigo="1108">cvc-minLength-valid: Value 'Kg' with length = '2' is not facet-valid with respect to minLength '3' for type '#AnonType_TrnUniMedstdTWS.stdTWSCIt.stdTWSDItstdTWSDstdTWS'.</Error></Errores> 
+Traceback (most recent call last):
+  File "/home/odoo/src/odoo/addons/payment/controllers/post_processing.py", line 54, in poll_status
+    monitored_tx._finalize_post_processing()
+  File "/home/odoo/src/enterprise/sale_subscription/models/payment_transaction.py", line 151, in _finalize_post_processing
+    super(PaymentTransaction, process_tx)._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/website_payment/models/payment_transaction.py", line 14, in _finalize_post_processing
+    super()._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/account_payment/models/payment_transaction.py", line 240, in _finalize_post_processing
+    super()._finalize_post_processing()
+  File "/home/odoo/src/odoo/addons/payment/models/payment_transaction.py", line 1013, in _finalize_post_processing
+    self.filtered(lambda tx: tx.operation != 'validation')._reconcile_after_done()
+  File "/home/odoo/src/enterprise/sale_subscription/models/payment_transaction.py", line 90, in _reconcile_after_done
+    res = super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/pos_online_payment/models/payment_transaction.py", line 29, in _reconcile_after_done
+    super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/sale/models/payment_transaction.py", line 126, in _reconcile_after_done
+    super()._reconcile_after_done()
+  File "/home/odoo/src/odoo/addons/account_payment/models/payment_transaction.py", line 123, in _reconcile_after_done
+    self.invoice_ids.filtered(lambda inv: inv.state == 'draft').action_post()
+  File "/home/odoo/src/odoo/addons/sale/models/account_move.py", line 66, in action_post
+    res = super(AccountMove, self).action_post()
+  File "/home/odoo/src/enterprise/account_reports/models/account_move.py", line 61, in action_post
+    return super().action_post()
+  File "/home/odoo/src/enterprise/account_accountant/models/account_move.py", line 75, in action_post
+    res = super().action_post()
+  File "/home/odoo/src/odoo/addons/account/models/account_move.py", line 4158, in action_post
+    other_moves._post(soft=False)
+  File "/home/odoo/src/enterprise/sale_subscription/models/account_move.py", line 13, in _post
+    posted_moves = super()._post(soft=soft)
+  File "/home/odoo/src/user/fel_ecofactura/models/account.py", line 19, in _post
+    if self.certificar():
+  File "/home/odoo/src/user/fel_ecofactura/models/account.py", line 261, in certificar
+    factura.error_certificador(resultado)
+  File "/home/odoo/src/user/fel_gt/models/account.py", line 61, in error_certificador
+    raise UserError('No se publicó la factura por error del certificador FEL: '+error)
+odoo.exceptions.UserError: No se publicó la factura por error del certificador FEL: <?xml version="1.0" encoding="UTF-8"?><Errores><Error Codigo="1107">ERROR EN LA ESTRUCTURA DEL XML</Error><Error Codigo="1108">cvc-minLength-valid: Value 'Kg' with length = '2' is not facet-valid with respect to minLength '3' for type '#AnonType_TrnUniMedstdTWS.stdTWSCIt.stdTWSDItstdTWSDstdTWS'.</Error></Errores>
+2025-07-04 15:07:24,874 4 WARNING kani-pruebas-sub-19634524 odoo.http: No se publicó la factura por error del certificador FEL: <?xml version="1.0" encoding="UTF-8"?><Errores><Error Codigo="1107">ERROR EN LA ESTRUCTURA DEL XML</Error><Error Codigo="1108">cvc-minLength-valid: Value 'Kg' with length = '2' is not facet-valid with respect to minLength '3' for type '#AnonType_TrnUniMedstdTWS.stdTWSCIt.stdTWSDItstdTWSDstdTWS'.</Error></Errores>
+2025-07-04 15:07:24,875 4 INFO kani-pruebas-sub-19634524 werkzeug: 181.174.104.208 - - [04/Jul/2025 15:07:24] "POST /payment/status/poll HTTP/1.0" 200 - 587 0.629 4.315
